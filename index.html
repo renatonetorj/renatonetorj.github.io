@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Apps do Videofotista · Renato Neto</title>
+<meta name="description" content="Apps simples que Renato Neto, O Videofotista, fez para o dia a dia e dá de presente. Grátis, sem propaganda e sem cadastro.">
+<meta property="og:title" content="Apps do Videofotista">
+<meta property="og:description" content="Apps de presente: grátis, sem propaganda e sem cadastro. Seus dados ficam com você.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 26 26%22%3E%3Crect width=%2226%22 height=%2226%22 rx=%226%22 fill=%22%233B3B3B%22/%3E%3Ccircle cx=%2213%22 cy=%2213%22 r=%227.5%22 fill=%22none%22 stroke=%22%23F4C84A%22 stroke-width=%223%22/%3E%3C/svg%3E">
+<style>
+@font-face{font-family:"Lilita One";src:url(f/lilita.woff2) format("woff2");font-display:swap}
+@font-face{font-family:"Rubik";src:url(f/rubik-400.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Rubik";src:url(f/rubik-600.woff2) format("woff2");font-weight:600;font-display:swap}
+:root{--bg:#2f2f2f;--surface:#3d3d3d;--line:#4c4c4c;--text:#f1f1f1;--muted:#b9b9b9;--accent:#F4C84A}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:17px/1.6 Rubik,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif}
+a{color:inherit}
+.wrap{max-width:980px;margin:0 auto;padding:0 20px}
+header{padding:22px 0 0}
+.topo{display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:14px;color:var(--muted)}
+.topo a{text-decoration:none}
+.topo a:hover{color:var(--accent)}
+.topo .marca-site{font-family:"Lilita One",sans-serif;letter-spacing:.5px;color:var(--text);font-size:16px}
+.hero{text-align:center;padding:56px 0 34px}
+h1{font-family:"Lilita One",sans-serif;font-weight:400;text-transform:uppercase;line-height:1.02;margin:0;font-size:clamp(40px,8vw,74px)}
+h1 span{display:block;color:var(--accent)}
+.hero p{max-width:600px;margin:20px auto 0;color:var(--muted);font-size:18px}
+.selos{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:22px}
+.selo{border:1px solid var(--line);border-radius:99px;padding:6px 14px;font-size:14px;color:var(--text)}
+.apps{display:grid;gap:22px;padding:10px 0 20px}
+.app{background:var(--surface);border:1px solid var(--line);border-radius:20px;display:grid;grid-template-columns:1.25fr 1fr;overflow:hidden}
+.app .info{padding:30px 30px 28px}
+.app .cab{display:flex;align-items:center;gap:16px}
+.app .cab img{width:64px;height:64px;border-radius:15px}
+.app h2{font-family:"Lilita One",sans-serif;font-weight:400;text-transform:uppercase;margin:0;font-size:30px;line-height:1.05}
+.app h2 small{display:block;font-family:Rubik,sans-serif;text-transform:none;font-size:15px;color:var(--accent);font-weight:600;margin-top:4px}
+.app h2.fam,.fam{margin:0;display:inline-flex;flex-direction:column;align-items:flex-start;gap:3px;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue",Arial,sans-serif;font-weight:900;font-size:30px;line-height:1;letter-spacing:1.6px;text-transform:uppercase}
+.fam .marca,.fam .nome{font-size:1em;font-family:inherit}
+.fam .marca{display:flex;align-items:center;color:#fff;white-space:nowrap}
+.fam .marca svg{width:27px;height:27px;margin:0 2px;flex:none;color:var(--accent)}
+.fam .nome{color:var(--accent);white-space:nowrap;align-self:center}
+.sub{display:block;color:var(--muted);font-size:15px;margin-top:10px}
+.app ul{margin:20px 0 0;padding:0;list-style:none}
+.app li{padding:5px 0 5px 26px;position:relative;color:#ddd}
+.app li:before{content:"";position:absolute;left:4px;top:15px;width:8px;height:8px;border-radius:50%;background:var(--accent)}
+.como{margin-top:18px;border-top:1px solid var(--line);padding-top:12px}
+.como summary{cursor:pointer;color:var(--accent);font-weight:600;font-size:15px}
+.como p{margin:10px 0 0;font-size:15px;color:#ddd}
+.onde{margin-top:16px;font-size:14px;color:var(--muted)}
+.bts{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.bt{display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;font-weight:600;font-size:16px;padding:12px 20px;border-radius:12px;border:1px solid var(--line);background:#474747;color:var(--text)}
+.bt:hover{border-color:var(--accent)}
+.bt.am{background:var(--accent);border-color:var(--accent);color:#2b2b2b}
+.app .tela{background:#2a2a2a;display:flex;align-items:flex-end;justify-content:center;padding:30px 24px 0}
+.app .tela img{width:100%;max-width:290px;border-radius:22px 22px 0 0;border:6px solid #1c1c1c;border-bottom:0;display:block}
+.app.breve{grid-template-columns:1fr}
+.app.breve .icone{width:64px;height:64px;border-radius:15px;background:#474747;display:grid;place-items:center;font-size:32px}
+.app.breve p{color:var(--muted);margin:14px 0 0}
+.contato{text-align:center;padding:40px 0 10px}
+.contato h3{font-family:"Lilita One",sans-serif;font-weight:400;text-transform:uppercase;font-size:28px;margin:0}
+.contato p{color:var(--muted);margin:8px 0 18px}
+.contato .bts{justify-content:center}
+footer{border-top:1px solid var(--line);margin-top:44px;padding:26px 0 40px;text-align:center;color:var(--muted);font-size:14px}
+footer nav{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 22px;margin-bottom:12px}
+footer nav a{text-decoration:none;color:var(--text)}
+footer nav a:hover{color:var(--accent)}
+@media (max-width:760px){
+  .app{grid-template-columns:1fr}
+  .app .info{padding:24px 20px 22px}
+  .app .tela{padding:22px 20px 0}
+  .app .tela img{max-width:240px}
+  .hero{padding:40px 0 26px}
+  .bt{flex:1 1 auto}
+}
+</style>
+</head>
+<body>
+<header class="wrap">
+  <div class="topo">
+    <a class="marca-site" href="https://renatoneto.com.br">RENATO NETO</a>
+    <a href="https://renatoneto.com.br">Voltar para o site</a>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <h1>Apps de presente<span>do Videofotista</span></h1>
+    <p>Programas simples que eu fiz para o meu dia a dia e agora dou de presente. Use à vontade.</p>
+    <div class="selos"><span class="selo">Grátis</span><span class="selo">Sem propaganda</span><span class="selo">Sem cadastro</span><span class="selo">Seus dados ficam com você</span></div>
+  </section>
+
+  <section class="apps">
+    <article class="app">
+      <div class="info">
+        <div class="cab"><div><h2 class="fam" aria-label="Videofotista Monetário"><span class="marca"><span>VIDEOF</span><svg viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="10.5" fill="none" stroke="currentColor" stroke-width="4"/><text x="13" y="17.6" text-anchor="middle" font-size="13" font-weight="900" fill="currentColor" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif">$</text></svg><span>TISTA</span></span><span class="nome">MONETÁRIO</span></h2><span class="sub">Ganhos e gastos da casa</span></div></div>
+
+        <ul>
+          <li>Lance uma despesa em segundos</li>
+          <li>Veja para onde o dinheiro foi no mês e no ano</li>
+          <li>Contas fixas, assinaturas e faturas dos cartões</li>
+          <li>Extrato do dia a dia, igual ao do banco</li>
+          <li>Ninguém vê os seus números, nem eu</li>
+        </ul>
+        <div class="bts">
+          <a class="bt am" href="videofotista-monetario/">📱 Celular ou 🪟 Windows</a>
+          <a class="bt" href="videofotista-monetario/Videofotista-Monetario-Mac.zip" download>💻 Baixar para Mac</a>
+        </div>
+        <details class="como">
+          <summary>Como instalar em cada aparelho</summary>
+          <p><b>📱 iPhone:</b> toque no botão amarelo, abra no Safari e vá em Compartilhar &gt; Adicionar à Tela de Início.</p>
+          <p><b>📱 Android:</b> toque no botão amarelo, abra no Chrome e vá nos três pontinhos &gt; Instalar app (ou "Adicionar à tela inicial"). No navegador da Samsung: menu &gt; Adicionar página a &gt; Tela inicial.</p>
+          <p><b>🪟 Windows:</b> clique no botão amarelo no Chrome ou no Edge e depois em "Instalar app" (ícone de monitor com setinha na barra de endereço). Ele ganha janela própria e ícone no menu Iniciar.</p>
+          <p><b>💻 Mac:</b> baixe o zip, descompacte e siga o LEIA-ME. Na primeira vez o Mac dá um aviso de segurança, é normal: Ajustes do Sistema &gt; Privacidade e Segurança &gt; Abrir Mesmo Assim.</p>
+          <p><b>Na primeira tela:</b> "Começar" guarda tudo só naquele aparelho. "Entrar com o Google" guarda no seu Google Drive e sincroniza o celular com o computador.</p>
+        </details>
+      </div>
+      <div class="tela"><img src="monetario-tela.png" alt="Tela inicial do Videofotista Monetário no celular"></div>
+    </article>
+
+    <article class="app breve">
+      <div class="info">
+        <div class="cab"><div><h2 class="fam" aria-label="Videofotista A Fazer"><span class="marca"><span>VIDEOF</span><svg viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="10.5" fill="none" stroke="currentColor" stroke-width="4"/><path d="M8.2 13.4l3.2 3.2 6.4-6.8" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>TISTA</span></span><span class="nome">A FAZER</span></h2><span class="sub">A lista do dia</span></div></div>
+
+        <p>O que ficou pendente passa sozinho para o dia seguinte. Em breve aqui.</p>
+      </div>
+    </article>
+  </section>
+
+  <section class="contato">
+    <h3>Fala comigo</h3>
+    <p>Dúvida, sugestão ou problema com algum app?</p>
+    <div class="bts" id="contato"></div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <nav>
+      <a href="https://renatoneto.com.br">renatoneto.com.br</a>
+      <a href="https://instagram.com/renatoneto">Instagram</a>
+      <a href="https://www.youtube.com/@ovideofotista">YouTube</a>
+      <a href="https://substack.com/@ovideofotista">Substack</a>
+    </nav>
+    Renato Neto, O Videofotista · Rio de Janeiro
+  </div>
+</footer>
+
+<script>
+(function(){
+  var em=['renatonetorj','gmail.com'].join('@'), zap=['55','21','98112','5737'].join('');
+  var box=document.getElementById('contato');
+  box.innerHTML='<a class="bt" href="mailto:'+em+'?subject='+encodeURIComponent('Apps do Videofotista')+'">✉️ E-mail</a>'+
+    '<a class="bt" target="_blank" rel="noopener" href="https://wa.me/'+zap+'?text='+encodeURIComponent('Oi Renato, vi os apps do Videofotista e ')+'">💬 WhatsApp</a>';
+})();
+</script>
+</body>
+</html>
